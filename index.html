@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <title>Jitendra Gupta- Portfolio</title>
+    <style>
+       #toggle{
+          
+            box-shadow: none;
+        }
+        /* .heroBg{
+           
+            height: 250px;
+            width:250px;
+            position: absolute;
+            bottom:-70px;
+            background:rgb(117, 191, 236);
+            border-radius: 50%;
+            transform: rotateX(50deg);
+            z-index: 0;
+        } */
+        .heroImg , .hero2{
+            object-fit: cover;
+            object-position: top;
+            filter: drop-shadow(0 0 5em #8ec8ec);
+            transition:1s all;
+            border-radius: 2px;
+          
+            
+        }
+        .heroImg:hover , .hero2:hover{
+            filter: drop-shadow(0 0 5em #ecc3ec);
+        }
+        .topBtn{
+            font-size:30px;
+            
+           right:0px;
+           bottom:110px;
+            transition:0.2s all;
+           
+        
+        }
+        .topBtn a{
+            color:grey;
+            width: 80px;
+           height:80px;
+           border-radius:50%;
+           display:flex;
+           align-items:center;
+          justify-content: center;
+          background: #c0e4fa51; 
+          transition:0.2s all;
+        }
+       
+        .downbtn {
+            font-size:30px;
+            background: #c0e4fa51;
+            width: 80px;
+           height:80px;
+            border-radius:50%;
+           display:flex;
+           align-items:center;
+          justify-content: center;
+            margin:100px auto;
+            transition:0.2s all;
+            cursor:pointer;
+        }
+        .downbtn:hover ,  .topBtn a:hover{
+            box-shadow:0px 0px 0px 3px #8ec8ec;
+        }
+        .pro{
+            background-color:rgba(213, 233, 241, 0.208);
+        }
+        .proBox img{
+                width:100%;
+                transition:0.5s all;
+
+        }
+        .proBox img:hover{
+            transform:scale(1.05);
+          
+        }
+        .proBox , .proBox2{
+            width:75%;
+            overflow: hidden;
+           transition:0.2s all;
+        
+
+        }
+        .proBox:hover , .proBox2:hover{
+            filter: drop-shadow(0 0 2em #a8d8f5a2);
+        }
+       
+        .proBox2 img{
+            width: 100%;
+            object-fit: cover;
+            transition:0.5s all;
+           
+        }
+        .proBox2 img:hover{
+            transform:scale(1.05);
+           
+           
+        }
+        .contact{
+            background-image:linear-gradient( #8ec8ec67 ,  #e8eff3)
+        }
+        
+        .bottomNav nav {
+            list-style: none;
+            font-size: 20px;
+            
+            
+            
+            
+        }
+        .step1, .step2, .step3 , .step4 , .step5{
+            background-color:rgba(213, 233, 241, 0.22);
+            padding:10px;
+          
+           
+
+        }
+        .bottomNav nav  a{
+            padding:5px 10px;
+            transition:0.2s all;
+            border-radius:5px;
+        }
+        .bottomNav nav  a:hover{
+            
+            background-color:rgba(165, 219, 240, 0.349);
+        }
+        aside ul li{
+            height:70px;
+            width:70px;
+           border-radius:50%;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            transition:0.2s all;
+            font-size: 25px;
+        }
+        aside ul li:hover{
+            background-color:rgba(165, 219, 240, 0.349);
+           
+        }
+        header{
+            position:sticky;
+            top:0px;
+            box-shadow: 0px 0px 10px #8ec8eca7;;
+            z-index: 10;
+        }
+        .sugarcane{
+            border-radius:20px;
+           
+        }
+        .techno div{
+            display:flex;
+            align-items: center;
+            background-color: #90ccf215;
+            transition:0.2s all;
+        }
+        .techno div:hover{
+            background-color:#90ccf24f;
+            box-shadow:0px 0px 0px 2px #90ccf2c2;
+        }
+
+        .techno span{
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position: center;
+           display:inline-block;
+            width:35px;
+            height:35px;
+           
+
+        }
+        .l1{
+            background-image: url("./public/images/html5.png");
+        }
+        .l2{
+            background-image: url("./public/images/css3.png");
+        }
+        .l3{
+            background-image: url("./public/images/js.png");
+        }
+        .l4{
+            background-image: url("./public/images/bootstrap.png");
+        }
+        .l5{
+            background-image: url("./public/images/react.png");
+        }
+        .l6{
+            background-image: url("./public/images/mongodb.png");
+        }
+        .l7{
+            background-image: url("./public/images/express.png");
+        }
+        .l8{
+            background-image: url("./public/images/nodejs.png");
+        }
+        .l9{
+            background-image: url("./public/images/java.png");
+        }
+        
+        @media screen and (max-width:768px){
+            .heroImg{
+                height:300px;
+                width:200px;
+            }
+            .hero2{
+                height:250px;
+                width:180px;
+            }
+            .downbtn{
+                height:50px;
+                width:50px;
+                font-size: 20px;
+                margin:30px auto;
+            }
+            .proBox , .proBox2{
+                width:90%;
+            }
+            #shortPro{
+                font-size:15px;
+            }
+          .bottomNav nav{
+               display: flex;
+               justify-content:space-around;
+              position:fixed;
+              bottom:0;
+             padding:10px;
+              left:0px;
+              right:0px;
+              background-color:#e1eff8;
+              border-top:1px solid grey;
+              font-size: 16px;;
+            } 
+            body{
+                margin-bottom:50px;
+             
+            }
+            .topBtn{
+                display:none;
+
+            }
+            .bottomNav nav  a{
+            padding:5px 10px;
+            
+        }
+        aside ul li{
+            background-color:rgba(165, 219, 240, 0.349);
+            height:50px;
+            width:50px;
+            font-size:20px;
+        }
+        .techno span{
+           
+            width:25px;
+            height:25px;
+
+        }
+        .techno{
+            font-size:14px;
+        }
+        .educationName h2{
+            font-size: 20px;
+        }
+       
+      
+        }
+    </style>
+</head>
+<body >
+      <header class="bg-light">
+            <div class="container ">
+                <nav class="navbar navbar-expand-lg">
+
+                    <a href="" class="navbar-brand "><h2>Jeet.com</h2></a>
+                    <button class="navbar-toggler" id="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
+                   
+                   <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav fw-medium">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                      
+                    </ul>
+                   </div>
+
+                </nav>
+            </div>
+      </header>
+      
+      <main class="mb-md-5 mt-1" >
+            <div class="container">
+                <div class="row align-items-center  gap-md-0 gap-4" >
+                    
+
+                    <div class="col-md-5 col-lg-6 text-center order-md-1  ">
+                        <div class="heroBox position-relative ">
+                            <img src="./public/images/jeetFiv.png" class="heroImg" height="400" width="300" alt="">
+                            <div class="heroBg"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 text-center order-md-0 ">
+                       <div class="mb-3"> <i>" knowledge : skill defines , not a piece of Paper "</i></div>
+                       <h2 class="text-dark">Hi <span class="gritEng">Hello</span> - <span class="gritHin">नमस्ते</span></h2>
+                       <h1 class="text-warning"> I'm Jitendra Gupta</h1>
+                       <p>I am a full-stack Web Developer and I have 1 and half year of experience of <span class="fw-medium">Web development .</span>
+                    I have created many projects of <span class="fw-medium">front-end</span> and <span class="fw-medium">Backend</span>. I have also knowledge of <span class="fw-medium">data base</span> </p>
+                    </div>
+                   
+
+                </div>
+                <a class="nav-link" href="#projects" title="Go To Project"><div class="bi bi-arrow-down downbtn text-secondary"></div></a>
+            </div>
+            
+      </main>
+      <section class="mt-md-5 ">
+        <div class="container">
+            <h1 id="projects" class="text-secondary mb-md-5 mb-3" align="center">My Projects</h1>
+            
+            <div class="row gap-2 pro  rounded p-3">
+
+                <div class="col-md d-flex justify-content-center">
+                  <div class="proBox rounded">
+                    <a href="firstGame.html" target="_blank">
+                        <img src="./public/images/fast2earn.gif" alt="" class="rounded">
+                      </a>
+                  </div>
+                </div>
+                <div class="col-md  text-md-start text-center">
+                       <div class="proAbout">
+                        <div class="h2">Fast2Earn Game</div>
+                        <div class="fw-medium pb-2"> <span class="p-1 bg-secondary-subtle rounded">HTML</span> <span class="p-1 bg-secondary-subtle rounded">CSS</span> <span class="p-1 bg-secondary-subtle rounded ">JavaScript</span></div>
+                        <div id="shortPro">It generates a random player value on click on "PLAY" . We can Decrease and Increase Players and automatic box number will change Higher number according . </div>
+                       </div>
+                </div>
+            </div>
+
+
+            <div class="row gap-2 mt-md-5 mt-4 mb-5 pro rounded p-3">
+
+                <div class="col-md order-md-1 d-flex justify-content-center">
+                  <div class="proBox2 rounded">
+                    <a href="MathTestTrick.html" target="_blank">
+                        <img src="./public/images/mathmagic.gif" alt="" class="rounded">
+                      </a>
+                  </div>
+                </div>
+                <div class="col-md order-md-0 text-md-start text-center">
+                       <div class="proAbout">
+                        <div class="h2">Math With Magic Game</div>
+                        <div class="fw-medium pb-2"> <span class="p-1 bg-secondary-subtle rounded">HTML</span> <span class="p-1 bg-secondary-subtle rounded">CSS</span> <span class="p-1 bg-secondary-subtle rounded ">JavaScript</span> <span class="bg-secondary-subtle p-1 rounded">Third Party</span></div>
+                        <div id="shortPro">In This Project we can play with Math , It will answer different Every Time and It's prompts change every time also . </div>
+                       </div>
+                </div>
+            </div>
+
+            <div class="row gap-2 mt-md-5 mt-4 mb-5 pro rounded p-3">
+
+                <div class="col-md d-flex justify-content-center">
+                  <div class="proBox2 rounded">
+                    <a href="MathTestTrick.html" target="_blank">
+                        <img src="./public/images/cashCounter.gif" alt="" class="rounded">
+                      </a>
+                  </div>
+                </div>
+                <div class="col-md text-md-start text-center">
+                       <div class="proAbout">
+                        <div class="h2">RealTime Cash Counter</div>
+                        <div class="fw-medium pb-2" > <span class="p-1 bg-secondary-subtle rounded">HTML</span> <span class="p-1 bg-secondary-subtle rounded">CSS</span> <span class="p-1 bg-secondary-subtle rounded ">JavaScript</span> </div>
+                        <div id="shortPro">This Project is Real Time cash counter  with Date & Time and With Actions. How many Notes & How much Money ? </div>
+                       </div>
+                </div>
+            </div>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="container">
+            <h1 id="about" class="text-secondary mb-md-5 mb-3" align="center">About Me</h1>
+
+            <div class="row align-items-center">
+                <div class="col-md-6  " align="center">
+                    <img src="./public/images/hero3.png" alt="" height="300" width="220" class="hero2">
+               </div>
+                <div class="col-md-6 py-3">
+                    <div class="row row-cols-2 fw-medium" >
+                        <div class="col-3  fs-5">Name :</div>
+                        <fiv class="col-9 fs-5 fw-bold">Jitendra Gupta </fiv>
+                        <fiv class="col-3 ">Email :</fiv>
+                        <fiv class="col-9">jeettech02@gmail.com </fiv>
+                        <fiv class="col-3">Phone :</fiv>
+                        <fiv class="col-9">+917235940470</fiv>
+                        <fiv class="col-3">Address :</fiv>
+                        <fiv class="col-9">Gram Jungal Gulariha Post Banarisiha Khurd, Maharajganj, Uttar-Pradesh 273164</fiv>
+                    </div>
+                  
+               </div>
+               
+            </div>
+            <div class="row mb-md-5 mb-4 px-md-5 ">
+                
+                <div class="col-12 text-center mt-4 mb-md-5 mb-4">
+                    <div class="text-primary-emphasis fw-bold h2 mb-3">Technologies I know ..</div>
+                    <div class="p-2  m-auto d-flex flex-wrap justify-content-between row-gap-2 column-gap-2 techno fw-medium">
+                        <div class=" px-2 py-1 rounded"><span class="l1"></span>HTML5</div>
+                        <div class="px-2 py-1 rounded"><span class="l2"></span>CSS3</div>
+                        <div class="px-2 py-1 rounded"><span class="l3"></span>JavaScript</div>
+                        <div class="px-2 py-1 rounded"><span class="l4"></span>Bootstrap</div>
+                        <div class="px-2 py-1 rounded"><span class="l5"></span>ReactJS</div>
+                        <div class="px-2 py-1 rounded"><span class="l6"></span>MongoDB</div>
+                        <div class="px-2 py-1 rounded"><span class="l7"></span>ExpressJS</div>
+                        <div class="px-2 py-1 rounded"><span class="l8"></span>NodeJS</div>
+                        <div class="px-2 py-1 rounded"><span class="l9"></span>Core JAVA</div>
+                    </div>
+                </div>
+
+
+
+                <div align="center" class="col-12 text-primary-emphasis h2 fw-bold mb-4 ">My Educational Journey</div>
+
+
+                <div class="col-1 p-0 ps-1 ">
+                    <img src="./public/images/sugarcane.jpg" class="sugarcane" alt="" height="600" width="100%">
+                </div>
+                <div class="col-11 d-flex flex-column justify-content-between educationName">
+                    
+                   <div class="step1">
+                        <h2 >UI Full-Stack Course <span class="h6 text-secondary">12/2023 - 06/2024</span> <a href="" class="h6 text-primary">view certificate</a></h2>
+                        <div ><span class="fw-medium">Naresh IT</span> , Ameerpet, Hyderabad, Telangana </div>
+
+                   </div>
+                   <div class="step2 text-secondary">
+                        <h2 >Polytechnic CSE <span class="h6">05/2020 - 01/2021 </span>  <span   class=" h6 bg-secondary-subtle px-2 py-1 rounded">Drop Out <span class="h6 bi bi-virus2"> Covid-19 Time</span></span></h2>
+                       
+                        <div>Government Polytechnic Bighapur, Uttar-Pradesh</div>
+                   </div>
+                   <div class="step3">
+                    <h2 >Intermediate <span class="text-secondary h6">07/2017 - 07/2019</span></h2>
+                    <div >Buddhnagar Addabazar Maharajganj , Uttar-Pradesh</div>
+               </div>
+               <div class="step4">
+                <h2 >Hign School <span class="text-secondary h6">07/2015 - 07/2017</span></h2>
+                <div >Buddhnagar Addabazar Maharajganj , Uttar-Pradesh</div>
+           </div>
+           <div class="step4">
+            <h2 >Birth <span class="text-secondary h6">02/2002 - Present</span></h2>
+            <div >Jungal Gulariha , Maharajganj , Uttar-Pradesh 273164</div>
+       </div>
+                   
+                  
+                    
+                </div>
+            </div>
+        </div>
+        
+      </section>
+
+      <section class="contact ">
+        <div class="container position-relative pb-md-5 pb-3">
+            <h1 id="contact" class="text-secondary mb-md-5 mb-3 pt-3" align="center">Contact</h1>
+           <div class="row">
+                <div class="col-md px-5  px-md-3">
+                    <div class="form">
+    
+                        <label for="fName" class="form-label mb-0">First Name</label><input class="form-control" type="text" id="fName">
+                        <label for="lName" class="form-label mt-2 mb-0">Last Name</label>
+                        <input type="text" class="form-control" id="lName">
+
+                        <label for="email" class="form-label mt-2 mb-0">Your Email</label><input class="form-control" type="email" id="email">
+                       <div class="area  ">
+                        <label for="query" class="form-label mt-2 mb-0">Your Query</label>
+                        <textarea name="comment" id="query" cols="30" rows="5" class="form-control"></textarea>
+                       </div>
+                       <button type="button" class="btn btn-secondary d-block m-auto mt-3 ">Send Message</button>
+                    </div>
+                </div>
+                <div class="col-md ">
+
+                    <div class="row px-md-5 py-md-4">
+                        <div class="col-12">
+                            <dl>
+                                <dt class="fw-normal text-secondary">Email</dt>
+                                <dd>jeettech02@gmail.com</dd>
+                                <dt class="fw-normal text-secondary">Phone</dt>
+                                <dd>+917235940470</dd>
+                                <dt class="fw-normal text-secondary">Address</dt>
+                                <dd>SR Nagar, Ameetpet, Hyderabad, Telangana 500038</dd>
+                            </dl>
+                        </div>
+                        
+                        
+                        <div class="col-12 py-md-2 py-0 ">
+                          
+                                <div class="text-center fw-medium mt-3">You can Contact Also on</div>
+                                <br>
+                                <aside>
+                                    <ul class=" d-flex justify-content-around list-unstyled">
+                                        <li><a href="" class="nav-link bi bi-linkedin"></a></li>
+                                        <li><a href="" class="nav-link bi bi-github"></a></li>
+                                        <li><a href="" class="nav-link bi bi-facebook"></a></li>
+                                        <li><a href="" class="nav-link bi bi-instagram"></a></li>
+                                        
+                                    </ul>
+                                </aside>
+                           
+                           
+                        </div>
+                        <div class="bottomNav col-12 text-center fw-medium ">
+                            <nav  class="d-flex justify-content-around">
+                                <a href="#" class="nav-link"><div>Home</div></a>
+                                <a href="#projects" class="nav-link"><div>Projects</div></a>
+                                <a href="#about" class="nav-link"><div>About</div></a>
+                                <a href="#contact" class="nav-link"><div>Contact</div></a>
+                            </nav>
+                        </div>
+
+                    </div>
+
+                   
+                </div>
+               
+           </div>
+           <div class="position-absolute topBtn " title="Back To Top" >
+            <a href="#"> <span class="bi bi-arrow-up"></span></a>
+        </div>
+    
+           
+        </div>
+
+      </section>
+
+      <footer class="bg-light p-2 text-secondary text-center" style="font-size:14px;">
+            &copy;Copyright All rights reserved - 2024 
+      </footer>
+
+
+
+
+
+      <script src="./node_modules/jquery/dist/jquery.js"></script>
+      <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+     
+</body>
+</html>
